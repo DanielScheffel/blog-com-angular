@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR" ng-app="blogMax">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    
+    <script type="text/javascript" src="/app.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header class="header">
+
+        <a href="/" class="logo"><span>B</span>log <span>F</span>ut<span>F</span>anatics</a> 
+        
+        <nav class="navbar">
+            <a href="#banner">banner</a>
+            <a href="#posts">Meus Posts</a>
+            <a href="#contact">Contate-me</a>
+        </nav>
+    
+        <div class="icons">
+            <i class="fas fa-bars" id="menu-bars"></i>
+            <i class="fas fa-search" id="search-icon"></i>
+        </div>
+    
+        <form action="" class="search-form">
+            <input type="search" name="" placeholder="search here..." id="search-box">
+            <label for="search-box" class="fas fa-search"></label>
+        </form>
+    
+    </header>
+
+    <section class="banner" id="banner">
+    
+        <div class="content">
+            <h3>A vida é como um jogo de futebol, cada lance pode definir sua trajetória.</h3>
+            <p></p>
+            <a href="#" class="btn">Meus Posts</a>
+        </div>
+    
+    </section>
+
+
+    <section class="container" id="posts" ng-controller="RestMax">
+
+        <div class="posts-container">
+    
+            <div class="post">
+                <img ng-src="https://api-fake-blog.herokuapp.com{{ publicacoes.thumbImage }}" alt="" class="image">
+                <div class="date">
+                    <i class="far fa-clock"></i>
+                    <span>{{publicacoes.postDate}}</span>
+                </div>
+                <h3 class="title">{{ publicacoes.title }}</h3>
+                <p class="text">{{ publicacoes.description }}</p>
+                <div class="links">
+                    <a href="#" class="user">
+                        <i class="far fa-user"></i>
+                        <span>{{ publicacoes.profileName}}</span>
+                    </a>
+                    <a href="#" class="icon">
+                        <i class="far fa-comment"></i>
+                        <span>(45)</span>
+                    </a>
+                    <a href="#" class="icon">
+                        <i class="far fa-share-square"></i>
+                        <span>(29)</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- header section ends -->
+    
+    <!-- banner section starts  -->
+    
+
+    <section class="banner" id="banner">
+        <section class="contact" id="contact">
+        
+            <form action="">
+                <h3>Contate-me</h3>
+                <div class="inputBox">
+                    <input type="text" placeholder="name">
+                    <input type="email" placeholder="email">
+                </div>
+                <div class="inputBox">
+                    <input type="number" placeholder="number">
+                    <input type="text" placeholder="subject">
+                </div>
+                <textarea name="" placeholder="message" id="" cols="30" rows="10"></textarea>
+                <input type="submit" value="send message" class="btn">
+            </form>
+        
+        </section>
+        </section>
+
+
+
+        <section class="footer">
+        
+            <div class="follow">
+                <a href="http://facebook.com" class="fab fa-facebook-f"></a>
+                <a href="http://twitter.com" class="fab fa-twitter"></a>
+                <a href="http://instagram.com" class="fab fa-instagram"></a>
+                <a href="https://api.whatsapp.com/send/?phone=5551999999999&type=phone_number&app_absent=0" class="fab fa-whatsapp"></a>
+            </div>
+        
+            <div class="credit">Criado pelo <span>Sr. Scheffel</span> | Todos os direitos reservados</div>
+        
+        </section>
+
+
+        <script src="js/script.js"></script>
+</body>
+</html>

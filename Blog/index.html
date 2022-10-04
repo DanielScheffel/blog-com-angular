@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR" ng-app="blog">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+<!-- header section starts  -->
+
+<header class="header">
+
+    <a href="" class="logo"><span>B</span>log <span>F</span>ut<span>F</span>anatics</a> 
+    
+    <nav class="navbar">
+        <a href="#banner">banner</a>
+        <a href="#posts">Meus Posts</a>
+        <a href="#contact">Contate-me</a>
+    </nav>
+
+    <div class="icons">
+        <i class="fas fa-bars" id="menu-bars"></i>
+        <i class="fas fa-search" id="search-icon"></i>
+    </div>
+
+    <form action="" class="search-form">
+        <input type="search" name="" placeholder="search here..." id="search-box">
+        <label for="search-box" class="fas fa-search"></label>
+    </form>
+
+</header>
+
+<!-- header section ends -->
+
+<!-- banner section starts  -->
+
+<section class="banner" id="banner">
+
+    <div class="content">
+        <h3>A vida é como um jogo de futebol, cada lance pode definir sua trajetória.</h3>
+        <p></p>
+        <a href="#" class="btn">Meus Posts</a>
+    </div>
+
+</section>
+
+<!-- banner section ends -->
+
+<!-- posts section starts  -->
+
+<section class="container" id="posts">
+
+    <div class="posts-container" ng-controller="Rest">
+
+        <div class="post" ng-repeat="publicacao in publicacoes">
+            <img ng-src="https://api-fake-blog.herokuapp.com{{ publicacao.thumbImage }}" alt="" class="image">
+            <div class="date">
+                <i class="far fa-clock"></i>
+                <span>{{ publicacao.postDate }}</span>
+            </div>
+            <h3 class="title">{{ publicacao.title }}</h3>
+            <p class="text">{{ publicacao.description }}</p>
+            <div class="links">
+                <a href="#" class="user">
+                    <i class="far fa-user"></i>
+                    <span>{{ publicacao.profileName}}</span>
+                </a>
+                <button id="ler-mais" ng-click="index($index)"> <a href="./pages/home.html"> Ler Mais</a></button>
+                <a href="#" class="icon">
+                    <i class="far fa-comment"></i>
+                    <span>(45)</span>
+                </a>
+                <a href="#" class="icon">
+                    <i class="far fa-share-square"></i>
+                    <span>(29)</span>
+                </a>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="sidebar">
+
+        <div class="box">
+            <h3 class="title">Sobre mim</h3>
+            <div class="about">
+                <img src="images/user.png" alt="">
+                <h3>Daniel Scheffel</h3>
+                <p>Estudante da Escola Técnica Estadual Monteiro Lobato, 17 anos de idade e futuro desenvolvedor Front-End.</p>
+                <div class="follow">
+                    <a href="http://facebook.com" class="fab fa-facebook-f"></a>
+                    <a href="http://twitter.com" class="fab fa-twitter"></a>
+                    <a href="http://instagram.com" class="fab fa-instagram"></a>
+                    <a href="https://api.whatsapp.com/send/?phone=5551999999999&type=phone_number&app_absent=0" class="fab fa-whatsapp"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <h3 class="title">Categorias</h3>
+            <div class="category">
+                <a href="https://www.esportelandia.com.br/futebol/nomes-de-times-de-futebol/"> Times <span>42</span></a>
+                <a href="https://www.goal.com/br/todas-as-competi%C3%A7%C3%B5es"> Ligas <span>75</span> </a>
+                <a href="https://arenageral.com.br/os-100-melhores-escudos-de-clubes-do-mundo-por-revista-britanica/"> Escudos <span>17</span> </a>
+                <a href="https://www.sambafoot.com/br/jogadores"> Jogadores <span>48</span> </a>
+                <a href="https://timesdomundo.com.br/"> Camisas <span>39</span> </a>
+                <a href="https://ge.globo.com/futebol/copa-do-mundo/2022/"> Copa do Mundo <span>59</span> </a>
+                <a href="https://ge.globo.com/futebol/futebol-internacional/noticia/2022/09/01/mercado-da-bola-europeu-2022-confira-as-transferencias-mais-caras-da-janela-temporada-2022-2023.ghtml"> Principais Transferências <span>12</span> </a>
+                <a href="https://www.espn.com.br/futebol/calendario"> Jogos da Semana <span>32</span> </a>
+                <a href="https://www.campeoesdofutebol.com.br/especial33.html"> Seleções Nacionais <span>18</span> </a>
+            </div>
+        </div>
+
+        <div class="box">
+            <h3 class="title">Postagens Populares</h3>
+            <div class="p-post">
+                <a href="#">
+                    <h3>1. Sorteio da Champions 2022/23</h3>
+                    <span><i class="far fa-clock"></i>25 de Agosto, 2022</span>
+                </a>
+                <a href="#">
+                    <h3>2. Final da Copa do Brasil já tem data e hora!</h3>
+                    <span><i class="far fa-clock"></i>16 de Setembro, 2022</span>
+                </a>
+                <a href="#">
+                    <h3>03. Falta pouco!</h3>
+                    <span><i class="far fa-clock"></i>16 de Setembro, 2022</span>
+                </a>
+                <a href="#">
+                    <h3>04. Em Construção</h3>
+                    <span><i class="far fa-clock"></i>???????????</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="box">
+            <h3 class="title">Tags Populares</h3>
+            <div class="tags">
+                <a href="ttps://www.esportelandia.com.br/futebol/nomes-de-times-de-futebol/">Times</a>
+                <a href="ttps://www.goal.com/br/todas-as-competi%C3%A7%C3%B5es">Ligas</a>
+                <a href="https://arenageral.com.br/os-100-melhores-escudos-de-clubes-do-mundo-por-revista-britanica/">Escudos</a>
+                <a href="https://www.sambafoot.com/br/jogadores">Jogadores</a>
+                <a href="https://timesdomundo.com.br/">Camisas</a>
+                <a href="https://ge.globo.com/futebol/copa-do-mundo/2022/">Copa do Mundo</a>
+                <a href="https://ge.globo.com/futebol/futebol-internacional/noticia/2022/09/01/mercado-da-bola-europeu-2022-confira-as-transferencias-mais-caras-da-janela-temporada-2022-2023.ghtml">Principais Transferências</a>
+                <a href="https://www.espn.com.br/futebol/calendario">Jogos da Semana</a>
+                <a href="https://www.campeoesdofutebol.com.br/especial33.html">Seleções Nacionais</a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- posts section ends -->
+
+<!-- contact section starts  -->
+<section class="banner" id="banner">
+<section class="contact" id="contact">
+
+    <form action="">
+        <h3>Contate-me</h3>
+        <div class="inputBox">
+            <input type="text" placeholder="name">
+            <input type="email" placeholder="email">
+        </div>
+        <div class="inputBox">
+            <input type="number" placeholder="number">
+            <input type="text" placeholder="subject">
+        </div>
+        <textarea name="" placeholder="message" id="" cols="30" rows="10"></textarea>
+        <input type="submit" value="send message" class="btn">
+    </form>
+
+</section>
+</section>
+
+<!-- contact section ends -->
+
+<!-- footer section starts  -->
+
+<section class="footer">
+
+    <div class="follow">
+        <a href="http://facebook.com" class="fab fa-facebook-f"></a>
+        <a href="http://twitter.com" class="fab fa-twitter"></a>
+        <a href="http://instagram.com" class="fab fa-instagram"></a>
+        <a href="https://api.whatsapp.com/send/?phone=5551999999999&type=phone_number&app_absent=0" class="fab fa-whatsapp"></a>
+    </div>
+
+    <div class="credit">Criado pelo <span>Sr. Scheffel</span> | Todos os direitos reservados</div>
+
+</section>
+
+<!-- footer section ends -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+    
+</body>
+</html>
